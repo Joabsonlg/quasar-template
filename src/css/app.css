@@ -1,0 +1,53 @@
+@font-face {
+  font-family: fredoka;
+  src: url(src/fonts/FredokaOne-Regular.ttf);
+}
+
+.fredoka {
+  font-family: fredoka;
+}
+
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 718px) {
+  .container,
+  .container-sm {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container,
+  .container-sm,
+  .container-md {
+    max-width: 1000px;
+  }
+}
+
+@media (min-width: 1439px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: 1440px;
+  }
+}
