@@ -21,7 +21,9 @@
             dense
             label="Login"
             to="/login"
+            v-if="!isAuthenticated"
           />
+          <q-btn flat dense label="Logout" v-if="isAuthenticated" @click="logout"/>
         </div>
       </q-toolbar>
     </q-header>
@@ -52,8 +54,11 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
+import {computed, ref} from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
+import {useAuthStore} from "stores/all";
+
+const $store = useAuthStore()
 
 const essentialLinks = [
   {
@@ -102,5 +107,11 @@ const essentialLinks = [
 
 const leftDrawerOpen = ref(false)
 
+const isAuthenticated = computed(() => $store.isAuthenticated)
+
 const toggleLeftDrawer = () => leftDrawerOpen.value = !leftDrawerOpen.value
+const logout = () => {
+  $store.SIGN_OUT()
+  $router.push('/')
+}
 </script>

@@ -1,0 +1,53 @@
+name: CI Build
+
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node16.13.2-chrome97-ff96
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install All Dependencies
+        run: npm install
+
+      - name: Install Quasar CLI
+        run: npm install -g @quasar/cli
+
+  ui-chrome-tests:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node16.13.2-chrome97-ff96
+    needs: install
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Download the build folders
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+          path: build
+
+      - name: 'UI Tests - Chrome'
+        uses: cypress-io/github-action@v2
+        with:
+          install: true
+          start: npm run start
+          wait-on: 'http://localhost:9000'
+          wait-on-timeout: 60
+          browser: chrome
+          record: false
+          parallel: true
+          group: 'UI - Chrome'
+        env:
+          CYPRESS_RECORD_KEY: d9112145-6619-49b5-849c-df8cb0b9de3d
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}

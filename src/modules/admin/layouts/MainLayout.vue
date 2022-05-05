@@ -23,7 +23,7 @@
             to="/login"
             v-if="!isAuthenticated"
           />
-          <q-btn flat dense label="Logout" v-if="isAuthenticated" @click="logout"/>
+          <q-btn flat dense label="Logout" v-if="isAuthenticated" @click="logout" id="logout-button"/>
         </div>
       </q-toolbar>
     </q-header>
