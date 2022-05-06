@@ -101,34 +101,24 @@
   </q-layout>
 </template>
 
-<script>
-import {defineAsyncComponent, defineComponent, computed, ref} from 'vue'
-import {useStore} from 'vuex';
+<script setup>
+import {computed, ref} from 'vue'
 import {useQuasar} from 'quasar';
 import {useRouter} from 'vue-router';
+import {authStore} from "src/modules/auth/store";
 
-export default defineComponent({
-  name: 'MainLayout',
-  components: {
-    SellerNavigationItems: defineAsyncComponent(() => import('../../shop/components/SellerNavigationItems.vue')),
-  },
-  setup() {
-    const $store = useStore()
-    const $q = useQuasar()
-    const $router = useRouter()
-    const leftDrawerOpen = ref(false)
+const $q = useQuasar()
+const $router = useRouter()
 
-    return {
-      leftDrawerOpen,
-      isAuthenticated: computed(() => $store.getters['authentication/isAuthenticated']),
-      signOut: () => $store.dispatch('authentication/SIGN_OUT'),
-      toggleLeftDrawer: () => leftDrawerOpen.value = !leftDrawerOpen.value,
-      user: computed(() => $store.getters['authentication/getUser']),
-      shop: computed(() => $store.getters['shop/getShop']),
-      isSeller: computed(() => $store.getters['authentication/isSeller']),
-    }
-  }
-})
+const $store = authStore()
+
+const leftDrawerOpen = ref(false)
+
+const isAuthenticated = computed(() => $store.isAuthenticated)
+const user = computed(() => $store.getUser)
+
+const signOut = () => $store.SIGN_OUT()
+const toggleLeftDrawer = () => leftDrawerOpen.value = !leftDrawerOpen.value
 </script>
 
 <style scoped>

@@ -1,11 +1,11 @@
 export default [
   {
     path: '/common',
-    component: () => import('./layouts/Main.vue'),
+    component: () => import('./layouts/MainLayout.vue'),
     children: [{
       name: 'common',
       path: '',
-      component: () => import('./pages/Index.vue')
+      component: () => import('./pages/IndexPage.vue')
     }]
   }
 ]
