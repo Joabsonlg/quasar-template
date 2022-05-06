@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "start": "quasar dev",
-    "buid": "quasar build",
+    "build": "quasar build",
     "lint": "eslint --ext .js,.vue ./",
     "format": "prettier --write \"**/*.{js,vue,css,html,md,json}\" --ignore-path .gitignore",
     "test": "cypress open",
