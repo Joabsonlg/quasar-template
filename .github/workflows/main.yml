@@ -86,9 +86,9 @@ jobs:
           wait-on: 'http://localhost:9000'
           wait-on-timeout: 60
           browser: chrome
-          record: false
+          record: true
           parallel: true
           group: 'UI - Chrome'
         env:
-          CYPRESS_RECORD_KEY: d9112145-6619-49b5-849c-df8cb0b9de3d
+          CYPRESS_RECORD_KEY: 037bb438-ac8e-48ae-9ea2-e3bfc2bd6fee
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
