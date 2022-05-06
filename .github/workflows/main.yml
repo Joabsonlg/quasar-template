@@ -13,6 +13,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Verify Changed files
+        uses: tj-actions/verify-changed-files@v5
+        id: changed_files
+        with:
+          files: |
+            package.json
+
+      - name: Cancel build if files changed
+        uses: andymckay/cancel-action@0.2
+        if: steps.changed_files.outputs.files_changed == 'true'
+
       - name: Get npm cache directory
         id: npm-cache
         run: |
@@ -37,12 +48,10 @@ jobs:
 
       - name: Cypress install
         uses: cypress-io/github-action@v2
+        if: steps.cache.outputs.cache-hit != 'true'
         with:
           runTests: false
           build: npm run build
-
-      - name: Build Quasar project
-        run: quasar build
 
       - name: Save build folder
         uses: actions/upload-artifact@v2
