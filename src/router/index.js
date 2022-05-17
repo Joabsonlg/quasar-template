@@ -15,7 +15,7 @@ export default route(function (/* { store, ssrContext } */) {
   })
 
   addBeforeEach(Router);
-  // addInterceptors(Router);
+  addInterceptors(Router);
 
   return Router
 })

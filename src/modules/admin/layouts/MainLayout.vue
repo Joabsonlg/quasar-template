@@ -12,7 +12,9 @@
         />
 
         <q-toolbar-title>
-          System Name
+          <router-link to="/" style="text-decoration: none; cursor: pointer" class="text-white">
+            System Name
+          </router-link>
         </q-toolbar-title>
 
         <div>
@@ -31,6 +33,7 @@
     <q-drawer
       v-model="leftDrawerOpen"
       bordered
+      show-if-above
     >
       <q-list>
         <q-item-label

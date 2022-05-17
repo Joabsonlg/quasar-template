@@ -17,7 +17,7 @@
       </div>
       <div class="col-12 col-sm-7">
         <div class="row q-ml-sm q-mt-sm sm-and-up-hide">
-          <div class="col-12 sm-hide md-hide lg-hide xl-hide fredoka text-subtitle1">
+          <div class="col-12 fredoka text-subtitle1">
             <router-link class="text-primary" style="text-decoration: none" to="/">
               System Name
             </router-link>
@@ -33,16 +33,16 @@
               </div>
               <q-form class="q-gutter-md" @submit="submitForm">
                 <q-input v-model="user.username" :rules="[rules.required]" label="Nome de usuário"
-                         lazy-rules name="username"/>
+                         lazy-rules name="username" v-bind="$input"/>
                 <q-input v-model="user.password" :rules="[rules.required, rules.minLength(6)]" label="Senha" lazy-rules
-                         name="password" type="password"/>
+                         name="password" type="password" v-bind="$input"/>
                 <div>
                   <q-btn class="full-width fredoka" color="primary" label="Entrar" rounded
                          type="submit"></q-btn>
                   <div class="q-mt-lg">
                     <div class="q-mt-sm">
                       Ainda não possui uma conta?
-                      <router-link class="text-primary" to="/shop/register">Cadastrar-se</router-link>
+                      <router-link class="text-primary" to="/login">Cadastrar-se</router-link>
                     </div>
                     <div class="q-mt-sm">
                       Esqueceu a senha? Clique
@@ -81,11 +81,7 @@ const submitForm = async () => {
     $commonStore.ADD_REQUEST()
     await $authStore.DO_LOGIN(user)
     const to = $route.query.to?.toString()
-    // if (userLogged.value.user_type.includes('Admin')) await $router.push(to || '/admin')
-    // else if (userLogged.value.user_type.includes('Seller')) await $router.push(to || '/shop')
-    // else await $router.push(to || '/')
     $router.push(to || '/admin')
-    $commonStore.REMOVE_REQUEST()
   } catch (error) {
     $commonStore.REMOVE_REQUEST()
     handleErros(error)

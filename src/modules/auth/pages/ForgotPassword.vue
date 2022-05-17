@@ -1,7 +1,7 @@
 <template>
   <q-card class="q-ma-xl">
     <div class="row">
-      <div class="col-0 col-sm-5 bg-teal rounded-left-borders xs-hide">
+      <div class="col-0 col-sm-5 bg-primary rounded-left-borders xs-hide">
         <div class="row q-ml-sm q-mt-sm">
           <div class="col-12 fredoka text-subtitle1">
             <router-link class="text-white" style="text-decoration: none" to="/">System Name
@@ -36,7 +36,7 @@
             <q-card-section>
               <q-form class="q-gutter-md" @submit="submitForm">
                 <q-input v-model="email" :rules="[rules.required]" label="Email" lazy-rules
-                         type="email"/>
+                         type="email" v-bind="$input"/>
                 <div>
                   <q-btn :loading="loading" class="full-width" color="primary" label="Enviar" rounded
                          type="submit"></q-btn>

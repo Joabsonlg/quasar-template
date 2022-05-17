@@ -1,7 +1,7 @@
 <template>
   <q-card class="q-mx-xl">
     <div class="row">
-      <div class="col-0 col-sm-5 bg-teal rounded-left-borders">
+      <div class="col-0 col-sm-5 bg-primary rounded-left-borders">
         <div class="row q-ml-sm q-mt-sm">
           <div class="col-12 fredoka text-subtitle1">
             <router-link class="text-white" style="text-decoration: none" to="/">System name
@@ -77,8 +77,8 @@ const $route = useRoute()
 const $router = useRouter()
 
 //Computed
-const userLogged = computed(() => $authStore.getters['authentication/getUser'])
-const loading = computed(() => $store.getters['common/isLoading'])
+const userLogged = computed(() => $authStore.getUser)
+const loading = computed(() => $commonStore.isLoading)
 
 //Data
 const password = ref('')
@@ -88,8 +88,8 @@ const user = userLogged.value
 //Methods
 const submitForm = async () => {
   try {
-    $store.commit('common/ADD_REQUEST')
-    await $authStore.dispatch('authentication/DO_LOGIN', {
+    $commonStore.ADD_REQUEST()
+    await $authStore.DO_LOGIN({
       username: userLogged.value.username,
       password: password.value
     })
@@ -101,7 +101,7 @@ const submitForm = async () => {
     $router.push({path: rota})
   } catch (error) {
     handleErros(error)
-    $store.commit('common/REMOVE_REQUEST')
+    $commonStore.REMOVE_REQUEST()
   }
 }
 

@@ -19,7 +19,7 @@ export const addInterceptors = (Router) => {
           await authStore.SET_BLOCK(true).then(() => {
             Router.push({name: 'Lock Screen', query: {to: Router.currentRoute.value.path}})
           })
-        } else if (!error.config.url.includes('login') && !error.config.url.includes('refresh') && !error.config.url.includes('verify')) {
+        } else if (!error.config.url.includes('create') && !error.config.url.includes('refresh') && !error.config.url.includes('verify')) {
           try {
             commonStore.ADD_REQUEST()
             await authStore.VALID_TOKEN(authStore.getUserToken?.access)
@@ -31,10 +31,11 @@ export const addInterceptors = (Router) => {
             })
             else {
               commonStore.ADD_REQUEST()
-              await authStore.SIGN_OUT().then(() => Router.push({
-                name: 'Login',
+              await authStore.SIGN_OUT()
+              Router.push({
+                path: '/login',
                 query: {to: Router.currentRoute.value.path}
-              }))
+              })
             }
           }
         }

@@ -2,8 +2,7 @@
   <q-page class="q-pa-sm">
     <q-card class="q-mt-sm">
       <q-card-section>
-        <div class="text-h6">Protected page</div>
-        <div class="text-subtitle2">by Joabson Arley</div>
+        <div class="text-h6">Admin page</div>
       </q-card-section>
 
       <q-card-section class="q-pt-none">
@@ -20,4 +19,13 @@
 </template>
 
 <script setup>
+import {useAuthStore} from 'src/stores/all.js'
+import {computed} from "vue";
+
+const authStore = useAuthStore()
+
+const userToken = computed(() => authStore.getUserToken)
+
+// This request is to be intercepted when the token is invalid
+authStore.GET_USER(userToken.value.access)
 </script>

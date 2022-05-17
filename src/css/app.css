@@ -51,3 +51,22 @@
     max-width: 1440px;
   }
 }
+
+@media (min-width: 600px) {
+  .sm-and-up-hide {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .md-and-up-hide {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .lg-and-up-hide {
+    display: none !important;
+  }
+}
+
