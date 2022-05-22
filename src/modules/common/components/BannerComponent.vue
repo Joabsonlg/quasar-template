@@ -4,17 +4,13 @@
   </div>
 </template>
 
-<script>
-
-export default {
-  name: "Banner",
-  props: {
-    banner: {
-      type: String,
-      required: true
-    }
-  },
-}
+<script setup>
+const props = defineProps({
+  banner: {
+    type: String,
+    required: true
+  }
+})
 </script>
 
 <style scoped>

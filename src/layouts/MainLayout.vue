@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header>
       <q-toolbar>
         <q-btn
           flat
@@ -9,19 +9,24 @@
           icon="menu"
           aria-label="Menu"
           @click="toggleLeftDrawer"
+          class="md-and-up-hide"
         />
 
         <q-toolbar-title>
           System Name
         </q-toolbar-title>
 
-        <div>
+        <div class="xs-hide sm-hide">
+          <q-btn flat dense no-caps label="Home" @click="goToSection('heroSection')" class="q-mx-sm"/>
+          <q-btn flat dense no-caps label="Features" @click="goToSection('features')" class="q-mx-sm"/>
+          <q-btn flat dense no-caps label="About" @click="goToSection('about')" class="q-mx-sm"/>
           <q-btn
-            flat
             dense
             label="Login"
             to="/login"
             v-if="!isAuthenticated"
+            flat
+            class="q-px-sm q-ml-md"
           />
           <q-btn flat dense label="Dashboard" v-if="isAuthenticated" to="/admin"/>
           <q-btn flat dense label="Logout" v-if="isAuthenticated" @click="logout"/>
@@ -39,80 +44,61 @@
         >
           Essential Links
         </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
+        <q-item clickable @click="navigate('heroSection')">
+          <q-item-section>
+            <q-item-label>Home</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable @click="navigate('features')">
+          <q-item-section>
+            <q-item-label>Features</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable @click="navigate('about')">
+          <q-item-section>
+            <q-item-label>About</q-item-label>
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
     <q-page-container>
       <router-view/>
+      <q-toolbar class="flex flex-center text-white" style="border-top: 2px solid #1976D2; background-color: #263238">
+        <div class="q-pa-md q-gutter-sm">
+          <q-btn round type="a" href="https://www.instagram.com/joabson_arley/" class="bg-primary text-white"
+                 icon="fab fa-instagram" target="_blank"/>
+          <q-btn round type="a" href="https://github.com/joabsonlg/" class="bg-primary text-white" icon="fab fa-github"
+                 target="_blank"/>
+          <q-btn round type="a" href="#" class="bg-primary text-white" icon="fab fa-twitter"/>
+          <q-btn round type="a" href="#" class="bg-primary text-white" icon="email"/>
+          <q-btn round type="a" href="#" class="bg-primary text-white" icon="fas fa-heart"/>
+        </div>
+      </q-toolbar>
     </q-page-container>
   </q-layout>
 </template>
 
 <script setup>
 import {computed, ref} from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
 import {useAuthStore} from "stores/all";
+import {goToSection} from "src/support/helpers/scroll";
 
 const $store = useAuthStore()
-
-const essentialLinks = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]
 
 const leftDrawerOpen = ref(false)
 
 const isAuthenticated = computed(() => $store.isAuthenticated)
 
+const navigate = (section) => {
+  leftDrawerOpen.value = false
+  setTimeout(() => {
+    goToSection(section)
+  }, 250)
+}
+
 const toggleLeftDrawer = () => leftDrawerOpen.value = !leftDrawerOpen.value
 const logout = () => {
   $store.SIGN_OUT()
-  $router.push('/')
 }
 </script>

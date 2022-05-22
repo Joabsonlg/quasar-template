@@ -1,5 +1,6 @@
 import {api} from "boot/axios";
 import {useAuthStore, useCommonStore} from "stores/all";
+import * as storage from "src/modules/auth/storage";
 
 export const addInterceptors = (Router) => {
   const commonStore = useCommonStore();
@@ -16,6 +17,7 @@ export const addInterceptors = (Router) => {
         if (Router.currentRoute.value.path.includes('lock')) return Promise.resolve()
         if (error.config.url.includes('refresh')) {
           commonStore.ADD_REQUEST()
+          storage.setBlocked(true)
           await authStore.SET_BLOCK(true).then(() => {
             Router.push({name: 'Lock Screen', query: {to: Router.currentRoute.value.path}})
           })
@@ -40,8 +42,6 @@ export const addInterceptors = (Router) => {
           }
         }
         return Promise.reject(error)
-      } else {
-        return Promise.reject(error)
-      }
+      } else return Promise.reject(error)
     })
 };

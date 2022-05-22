@@ -8,7 +8,6 @@ export const addBeforeEach = (Router) => {
 
     const destination = to.name;
     const requiresLogin = to.meta.requireLogin;
-    const requiresAdmin = to.meta.isAdmin;
     const isAuthenticated = store.isAuthenticated;
     const isBlocked = store.isBlocked;
 
@@ -17,18 +16,13 @@ export const addBeforeEach = (Router) => {
       else if (isBlocked) next({name: 'Lock Screen'});
       else next();
     } else if (destination === 'Lock Screen') {
-      if (isAuthenticated) next({name: 'Admin Dashboard'});
-      else if (isBlocked) next();
+      if (isBlocked) next();
+      else if (isAuthenticated) next({name: 'Admin Dashboard'});
       else next({path: '/login'});
     } else {
       if (requiresLogin) {
-        if (isAuthenticated) {
-          // if (requiresAdmin) {
-          //   if (store.isAdmin) next();
-          //   else next({name: 'Erro 403'});
-          // } else next();
-          next();
-        } else if (isBlocked) next({name: 'Lock Screen', query: {to: to.path}})
+        if (isAuthenticated) next();
+        else if (isBlocked) next({name: 'Lock Screen', query: {to: to.path}})
         else next({path: '/login', query: {to: to.path}});
       } else next();
     }

@@ -94,10 +94,7 @@ const submitForm = async () => {
       password: password.value
     })
     const to = $route.query.to
-    let rota = ''
-    if (userLogged.value.user_type.includes('Admin')) rota = to || '/admin'
-    else if (userLogged.value.user_type.includes('Seller')) rota = to || '/shop'
-    else rota = to || '/'
+    let rota = to || '/admin'
     $router.push({path: rota})
   } catch (error) {
     handleErros(error)

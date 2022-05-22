@@ -1,7 +1,9 @@
 import {Notify} from 'quasar'
 
 export const handleErros = (error) => {
-  if (!error.response) notify('Falha de conexão, tente novamente mais tarde!')
+  if (!error.response)
+    if (error.hasOwnProperty('message')) notify(error.message)
+    else notify('Falha de conexão, tente novamente mais tarde!')
   else if (error.response.hasOwnProperty('message')) notify(error.response.message)
   else if (error.response.hasOwnProperty('data')) {
     const errorData = error.response.data

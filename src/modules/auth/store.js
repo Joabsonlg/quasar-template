@@ -1,19 +1,20 @@
 import {defineStore} from 'pinia';
 import * as storage from "src/modules/auth/storage";
 import {api} from "boot/axios";
+import {isBlocked} from "src/modules/auth/storage";
 
 export const authStore = defineStore('auth', {
   state: () => ({
     user: {},
     token: '',
     authenticated: false,
-    isBlocked: false
+    blocked: false
   }),
   getters: {
     getUser: state => state.user,
     getUserToken: state => state.token,
     isAuthenticated: state => state.authenticated,
-    isBlocked: state => state.isBlocked
+    isBlocked: state => state.blocked
   },
   actions: {
     SET_TOKEN(payload) {
@@ -21,6 +22,7 @@ export const authStore = defineStore('auth', {
       storage.setHeaderToken(payload)
       this.token = payload
       this.authenticated = true
+      this.blocked = isBlocked()
     },
     async DO_LOGIN(payload) {
       await api.post('/api/v1/jwt/create/', payload).then(async response => {
@@ -52,8 +54,9 @@ export const authStore = defineStore('auth', {
       this.user = {}
       this.token = ''
       this.authenticated = false
+      this.blocked = false
     },
-    CHECK_TOKEN() {
+    async CHECK_TOKEN() {
       if (this.token) return Promise.resolve(this.token)
       const token = storage.getLocalToken()
       if (!token) return Promise.reject(new Error('Token inválido!'))
@@ -73,6 +76,10 @@ export const authStore = defineStore('auth', {
     async RESET_PASSWORD_CONFIRM(payload) {
       await api.post('/api/v1/users/reset_password_confirm/', payload).then(() => {
       })
+    },
+    SET_BLOCK(payload) {
+      this.blocked = payload
+      this.authenticated = !payload
     }
   },
 });
