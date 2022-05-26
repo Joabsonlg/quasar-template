@@ -11,7 +11,6 @@ describe('init', () => {
 
   it('should enter in login page', () => {
     cy.visit('/login')
-    cy.get('div').contains('Login').click();
   });
 
   it('should enter in forgot password page', () => {

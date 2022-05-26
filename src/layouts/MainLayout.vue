@@ -59,6 +59,21 @@
             <q-item-label>About</q-item-label>
           </q-item-section>
         </q-item>
+        <q-item clickable v-if="!isAuthenticated" to="/login">
+          <q-item-section>
+            <q-item-label>Login</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable  v-if="isAuthenticated" to="/admin">
+          <q-item-section>
+            <q-item-label>About</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable  v-if="isAuthenticated" @click="logout">
+          <q-item-section>
+            <q-item-label>About</q-item-label>
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
