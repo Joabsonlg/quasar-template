@@ -79,7 +79,7 @@
 
     <q-page-container>
       <router-view/>
-      <q-toolbar class="flex flex-center text-white" style="border-top: 2px solid #1976D2; background-color: #263238">
+      <q-toolbar class="flex flex-center text-white" style="border-top: 2px solid #0cbcbc; background-color: #263238">
         <div class="q-pa-md q-gutter-sm">
           <q-btn round type="a" href="https://www.instagram.com/joabson_arley/" class="bg-primary text-white"
                  icon="fab fa-instagram" target="_blank"/>

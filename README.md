@@ -28,7 +28,7 @@ $ git checkout -b branch-name
 # Make the changes to the code and upload them to the repository
 $ git add .
 $ git commit -m "Summary of my changes"
-$ git push origin branch-name
+$ git push -u origin branch-name
 
 #In github, create a pull request to the master branch
 ```
