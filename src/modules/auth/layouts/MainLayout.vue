@@ -4,7 +4,7 @@
       <q-page>
         <div class="row" style="height: 100vh">
           <div class="col-12 flex content-center justify-center">
-            <router-view/>
+            <router-view />
           </div>
         </div>
       </q-page>
@@ -13,12 +13,11 @@
 </template>
 
 <script setup>
-import {useQuasar} from "quasar";
+import { useQuasar } from "quasar";
 
-const $q = useQuasar()
-$q.dark.set(false)
+const $q = useQuasar();
+$q.dark.set(false);
 </script>
-
 
 <style scoped>
 .wave {
@@ -34,7 +33,7 @@ $q.dark.set(false)
 }
 
 .bg-auth {
-  backgroud-color: #F0F4F3;
+  background-color: #f0f4f3;
   background-image: url("src/assets/login/bg-auth.png");
   background-size: cover;
   background-repeat: no-repeat;

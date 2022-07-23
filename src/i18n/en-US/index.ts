@@ -1,0 +1,23 @@
+export default {
+  Home: "Home",
+  Features: "Features",
+  About: "About",
+  "System Name": "System Name",
+  "Start now": "Start now",
+  Welcome: "Welcome",
+  "Enter credentials": "Enter your credentials to login",
+  Login: "Login",
+  "without account": "Don't have an account yet?",
+  "Forgotten Password? Click": "Forgotten Password? Click",
+  here: "here",
+  username: "Username",
+  password: "Password",
+  register: "Register",
+  "This field is required!": "This field is required!",
+  "This field must be a valid e-mail address!":
+    "This field must be a valid e-mail address!",
+  Nothing: "Oops. Nothing here...",
+  title: "Title here",
+  "connection failed": "Connection failed, please try again later!",
+  "unexpected error": "Unexpected error, please try again later!",
+};

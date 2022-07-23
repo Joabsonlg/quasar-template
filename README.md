@@ -19,8 +19,10 @@ npm install
 quasar dev
 ```
 
-  ## ⚖️ Contributions
+## ⚖️ Contributions
+
 To make changes to the code:
+
 ```bash
 # Create a branch
 $ git checkout -b branch-name
@@ -32,7 +34,9 @@ $ git push -u origin branch-name
 
 #In github, create a pull request to the master branch
 ```
+
 Be sure to do the appropriate tests.
 
 ## :key: License
+
 [MIT](https://github.com/Joabsonlg/quasar-template/blob/master/LICENCE)

@@ -3,11 +3,11 @@
     <q-card style="max-width: 300px">
       <q-skeleton height="200px" square />
       <q-card-section>
-        <q-skeleton type="text" height="40px"/>
+        <q-skeleton type="text" height="40px" />
       </q-card-section>
 
       <q-card-section class="q-pt-none">
-        <q-skeleton type="text" width="100px" height="25px"/>
+        <q-skeleton type="text" width="100px" height="25px" />
         <q-skeleton type="text" />
       </q-card-section>
     </q-card>
@@ -16,10 +16,8 @@
 
 <script>
 export default {
-name: "CardShowProduct"
-}
+  name: "CardShowProduct",
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

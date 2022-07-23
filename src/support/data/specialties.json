@@ -1,0 +1,353 @@
+[
+  {
+    "name": "ACUPUNTURA"
+  },
+  {
+    "name": "AGENTE COMUNITÁRIO DE SAÚDE"
+  },
+  {
+    "name": "ALERGIA E IMUNOLOGIA"
+  },
+  {
+    "name": "ANATOMOPATOLOGISTA"
+  },
+  {
+    "name": "ANESTESIOLOGISTA"
+  },
+  {
+    "name": "ANGIOLOGIA"
+  },
+  {
+    "name": "ASSISTENTE SOCIAL"
+  },
+  {
+    "name": "ATENDENTE DE CONSULTÓRIO DENTÁRIO"
+  },
+  {
+    "name": "AUXILIAR DE ENFERMAGEM"
+  },
+  {
+    "name": "AUXILIAR DE FARMÁCIA DE MANIPULAÇÃO"
+  },
+  {
+    "name": "AUXILIAR DE LABORATÓRIO DE ANÁLISES CLÍNICAS"
+  },
+  {
+    "name": "AUXILIAR DE RADIOLOGIA (REVELAÇÃO FOTOGRÁFICA)"
+  },
+  {
+    "name": "AUXILIAR EM SAÚDE BUCAL DA ESTRATÉGIA DE SAÚDE DA FAMÍLIA"
+  },
+  {
+    "name": "AUXILIAR TÉCNICO EM PATOLOGIA CLÍNICA"
+  },
+  {
+    "name": "BIÓLOGO"
+  },
+  {
+    "name": "BIOMÉDICO"
+  },
+  {
+    "name": "CANCEROLOGISTA CIRÚRGICO (ONCOLOGISTA CIRÚRGICO)"
+  },
+  {
+    "name": "CARDIOLOGIA"
+  },
+  {
+    "name": "CIRURGIA CARDIOVASCULAR"
+  },
+  {
+    "name": "CIRURGIA DA MÃO"
+  },
+  {
+    "name": "CIRURGIA DE CABEÇA E PESCOÇO"
+  },
+  {
+    "name": "CIRURGIA DO APARELHO DIGESTIVO"
+  },
+  {
+    "name": "CIRURGIA GERAL"
+  },
+  {
+    "name": "CIRURGIA PEDIÁTRICA"
+  },
+  {
+    "name": "CIRURGIA PLÁSTICA"
+  },
+  {
+    "name": "CIRURGIA TORÁCICO"
+  },
+  {
+    "name": "CIRURGIA VASCULAR"
+  },
+  {
+    "name": "CIRURGIÃO DENTISTA - CLÍNICO GERAL"
+  },
+  {
+    "name": "CIRURGIÃO DENTISTA - DENTISTICA"
+  },
+  {
+    "name": "CIRURGIÃO DENTISTA - ENDODONTISTA"
+  },
+  {
+    "name": "CIRURGIÃO DENTISTA - ESTRATÉGIA SAUDE DA FAMILIA"
+  },
+  {
+    "name": "CIRURGIÃO DENTISTA - ORTOPEDISTA E ORTODONTISTA"
+  },
+  {
+    "name": "CIRURGIÃO DENTISTA - PATOLOGISTA BUCAL"
+  },
+  {
+    "name": "CIRURGIÃO DENTISTA - RADIOLOGISTA"
+  },
+  {
+    "name": "CIRURGIÃO DENTISTA - TRAUMATOLOGISTA BUCOMAXILOFACIAL"
+  },
+  {
+    "name": "CIRURGIÃO DENTISTA DE SAUDE COLETIVA"
+  },
+  {
+    "name": "CLINICA MEDICA"
+  },
+  {
+    "name": "CLÍNICO GERAL"
+  },
+  {
+    "name": "CURSO DE DEPENDÊNCIA QUÍMICA"
+  },
+  {
+    "name": "DERMATOLOGIA"
+  },
+  {
+    "name": "DIRETOR DE SERVIÇOS DE SAÚDE"
+  },
+  {
+    "name": "EDUCADOR FÍSICO"
+  },
+  {
+    "name": "ENDOCRINOLOGIA E METABOLOGIA"
+  },
+  {
+    "name": "ENDOSCOPISTA"
+  },
+  {
+    "name": "ENFERMEIRO"
+  },
+  {
+    "name": "FARMACEUTICO"
+  },
+  {
+    "name": "FARMACEUTICO BIOQUIMICO"
+  },
+  {
+    "name": "FISIATRIA"
+  },
+  {
+    "name": "FISIOTERAPEUTA ESPORTIVO"
+  },
+  {
+    "name": "FISIOTERAPEUTA GERAL"
+  },
+  {
+    "name": "FONOAUDIÓLOGO"
+  },
+  {
+    "name": "GASTROENTEROLOGIA"
+  },
+  {
+    "name": "GENETICISTA (MÉDICO)"
+  },
+  {
+    "name": "GERIATRA"
+  },
+  {
+    "name": "GINECOLOGIA E OBSTETRICIA"
+  },
+  {
+    "name": "HEMATOLOGIA"
+  },
+  {
+    "name": "HEMOTERAPEUTA"
+  },
+  {
+    "name": "HIPERBARISTA"
+  },
+  {
+    "name": "INFECTOLOGISTA"
+  },
+  {
+    "name": "INSTRUMENTADOR CIRÚRGICO"
+  },
+  {
+    "name": "INTENSIVISTA"
+  },
+  {
+    "name": "LEGISTA"
+  },
+  {
+    "name": "MASSAGISTA"
+  },
+  {
+    "name": "MASTOLOGISTA"
+  },
+  {
+    "name": "MEDICINA ESTÉTICA"
+  },
+  {
+    "name": "MEDICINA NUCLEAR"
+  },
+  {
+    "name": "MÉDICO COLOPROCTOLOGISTA"
+  },
+  {
+    "name": "MÉDICO DE FAMILIA E COMUNIDADE"
+  },
+  {
+    "name": "MÉDICO DO TRABALHO"
+  },
+  {
+    "name": "MÉDICO EM MEDICINA DE TRÁFEGO"
+  },
+  {
+    "name": "MÉDICO EM MEDICINA PREVENTIVA E SOCIAL"
+  },
+  {
+    "name": "MÉDICO ESTRATÉGIA SAUDE DA FAMILIA"
+  },
+  {
+    "name": "MÉDICO HOMEOPATA"
+  },
+  {
+    "name": "MÉDICO PATOLOGISTA CLÍNICO / MEDICINA LABORATORIAL"
+  },
+  {
+    "name": "MÉDICO RESIDENTE"
+  },
+  {
+    "name": "MÉDICO VETERINÁRIO"
+  },
+  {
+    "name": "MUSICOTERAPEUTA"
+  },
+  {
+    "name": "NEFROLOGIA"
+  },
+  {
+    "name": "NEUROCIRURGIÃO"
+  },
+  {
+    "name": "NEUROFISIOLOGIA CLINICA"
+  },
+  {
+    "name": "NEUROLOGIA"
+  },
+  {
+    "name": "NEUROPSICÓLOGO"
+  },
+  {
+    "name": "NUTRICIONISTA"
+  },
+  {
+    "name": "NUTROLOGIA"
+  },
+  {
+    "name": "ODONTOLOGISTA"
+  },
+  {
+    "name": "OFTALMOLOGISTA"
+  },
+  {
+    "name": "ONCOLOGIA "
+  },
+  {
+    "name": "ORTODONTIA E ORTOPEDIA FACIAL"
+  },
+  {
+    "name": "ORTOPEDIA E TRAUMATOLOGIA"
+  },
+  {
+    "name": "ORTOPTISTA"
+  },
+  {
+    "name": "OTORRINOLARINGOLOGISTA"
+  },
+  {
+    "name": "OUTRAS"
+  },
+  {
+    "name": "PATOLOGISTA"
+  },
+  {
+    "name": "PEDIATRIA"
+  },
+  {
+    "name": "PNEUMOLOGISTA"
+  },
+  {
+    "name": "PODOLOGIA"
+  },
+  {
+    "name": "PREPARADOR FÍSICO"
+  },
+  {
+    "name": "PSICOLOGIA CLINICA"
+  },
+  {
+    "name": "PSICOPEDAGOGO"
+  },
+  {
+    "name": "PSIQUIATRA"
+  },
+  {
+    "name": "RADIOLOGISTA / IMAGINOLOGISTA"
+  },
+  {
+    "name": "RADIOTERAPEUTA"
+  },
+  {
+    "name": "REUMATOLOGIA"
+  },
+  {
+    "name": "SANITARISTA"
+  },
+  {
+    "name": "TERAPEUTA"
+  },
+  {
+    "name": "TERAPEUTA OCUPACIONAL"
+  },
+  {
+    "name": "TRABALHADOR DE SERVIÇOS DE LIMPEZA E CONSERVAÇÃO DE ÁREAS PÚBLICAS"
+  },
+  {
+    "name": "TÉCNICO DE ENFERMAGEM"
+  },
+  {
+    "name": "TÉCNICO DE ENFERMAGEM DO TRABALHO"
+  },
+  {
+    "name": "TÉCNICO DE LABORATÓRIO DE ANÁLISES FÍSICO-QUÍMICAS (MATERIAIS DE CONSTRUÇÃO)"
+  },
+  {
+    "name": "TÉCNICO EM ACUPUNTURA"
+  },
+  {
+    "name": "TÉCNICO EM FOTÔNICA"
+  },
+  {
+    "name": "TÉCNICO EM HIGIENE DENTAL"
+  },
+  {
+    "name": "TÉCNICO EM PATOLOGIA CLÍNICA"
+  },
+  {
+    "name": "TÉCNICO EM RADIOLOGIA E IMAGENOLOGIA"
+  },
+  {
+    "name": "UROLOGIA"
+  },
+  {
+    "name": "VISITADOR SANITÁRIO"
+  }
+]

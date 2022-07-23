@@ -19,13 +19,13 @@
 </template>
 
 <script setup>
-import {useAuthStore} from 'src/stores/all.js'
-import {computed} from "vue";
+import { useAuthStore } from "src/stores/all";
+import { computed } from "vue";
 
-const authStore = useAuthStore()
+const authStore = useAuthStore();
 
-const userToken = computed(() => authStore.getUserToken)
+const userToken = computed(() => authStore.getUserToken);
 
 // This request is to be intercepted when the token is invalid
-authStore.GET_USER(userToken.value.access)
+authStore.GET_USER(userToken.value.access);
 </script>

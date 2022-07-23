@@ -6,89 +6,22 @@ on:
       - "**"
 
 jobs:
-  install:
+  format-and-build:
     runs-on: ubuntu-latest
-    container: cypress/browsers:node16.13.2-chrome97-ff96
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Verify Changed files
-        uses: tj-actions/verify-changed-files@v5
-        id: changed_files
-        with:
-          files: |
-            package.json
-
-      - name: Cancel build if files changed
-        uses: andymckay/cancel-action@0.2
-        if: steps.changed_files.outputs.files_changed == 'true'
-
-      - name: Get npm cache directory
-        id: npm-cache
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
-
-      - name: Cache node modules
-        uses: actions/cache@master
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Install All Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+      - name: Install dependencies
         run: npm install
 
       - name: Install Quasar CLI
         run: npm install -g @quasar/cli
 
-      - name: Cypress install
-        uses: cypress-io/github-action@v2
-        if: steps.cache.outputs.cache-hit != 'true'
-        with:
-          runTests: false
-          build: npm run build
+      - name: Format code
+        run: npm run format
 
-      - name: Save build folder
-        uses: actions/upload-artifact@v2
-        with:
-          name: build
-          if-no-files-found: error
-          path: /__w/quasar-template/quasar-template/dist/spa
+      - name: Lint
+        run: npm run lint
 
-  ui-chrome-tests:
-    runs-on: ubuntu-latest
-    container: cypress/browsers:node16.13.2-chrome97-ff96
-    needs: install
-    strategy:
-      fail-fast: false
-      matrix:
-        containers: [ 1, 2 ]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Download the build folders
-        uses: actions/download-artifact@v2
-        with:
-          name: build
-          path: build
-
-      - name: 'UI Tests - Chrome'
-        uses: cypress-io/github-action@v2
-        with:
-          install: true
-          start: npm run start
-          wait-on: 'http://localhost:9000'
-          wait-on-timeout: 60
-          browser: chrome
-          record: true
-          parallel: true
-          group: 'UI - Chrome'
-        env:
-          CYPRESS_RECORD_KEY: 037bb438-ac8e-48ae-9ea2-e3bfc2bd6fee
-          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+      - name: Build project
+        run: npm run build

@@ -1,0 +1,23 @@
+export default {
+  Home: "Início",
+  Features: "Características",
+  About: "Sobre",
+  "System Name": "Nome do sistema",
+  "Start now": "Começar agora",
+  Welcome: "Bem vindo",
+  "Enter credentials": "Informe suas credenciais para fazer o login",
+  Login: "Entrar",
+  "without account": "Não possui uma conta ainda?",
+  "Forgotten Password? Click": "Esqueceu sua senha? Clique",
+  here: "aqui",
+  username: "Nome de usuário",
+  password: "Senha",
+  register: "Cadastrar-se",
+  "This field is required!": "Este campo é obrigatório!",
+  "This field must be a valid e-mail address!":
+    "Este campo deve ser um e-mail válido!",
+  Nothing: "Oops. Nada aqui...",
+  title: "Título aqui",
+  "connection failed": "Falha de conexão, tente novamente mais tarde!",
+  "unexpected error": "Ocorreu um erro inesperado, tente novamente mais tarde!",
+};
